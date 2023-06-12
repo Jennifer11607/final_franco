@@ -1,5 +1,8 @@
 <?php
-require_once '../../modelos/Especialidad.php';
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+require_once '../../modelos/Especialidades.php';
 require_once '../../modelos/Clinica.php';
     try {
         $especialidad = new Especialidad();

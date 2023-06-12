@@ -55,7 +55,7 @@ require '../../modelos/Cita.php';
                         <?php  } ?>
                         <?php endforeach ?>
                         <tr class="text-center table-dark">
-                            <td colspan="6"><?= $busqueda[2]['CLINICA_NOMBRE'] ?>(<?= $busqueda[2]['MEDICO_NOMBRE'] ?>)</td>
+                            <td colspan="6"><?= $busqueda[1]['CLINICA_NOMBRE'] ?>(<?= $busqueda[2]['MEDICO_NOMBRE'] ?>)</td>
                         </tr>
                         <tr>
                             <th>NO.</th>
