@@ -85,7 +85,6 @@ $cit=$cita->buscar_todo();
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-4">
-                <a href="/final_franco/vistas/citas/detalle.php" class="btn btn-info w-100">VER LAS CITAS DE HOY</a><br><br>
                 <a href="/final_franco/vistas/citas/buscar.php" class="btn btn-info w-100">Regresar a la búsqueda</a>
             </div>
         </div>
