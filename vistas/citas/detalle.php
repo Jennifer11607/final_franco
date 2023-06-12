@@ -9,7 +9,7 @@ require '../../modelos/Cita.php';
    $buscar = new Cita();
 
    $busqueda= $buscar->busqueda();
-
+var_dump($busqueda);
     } catch (PDOException $e) {
         $error = $e->getMessage();
     } 

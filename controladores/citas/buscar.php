@@ -10,9 +10,13 @@ try {
     $cita = new Cita();
     $citas = $cita->buscar();
 
+    $cita3 = new Cita();
+$cit=$cita->buscar_todo();
+// var_dump($cit);
+
     $paciente = new Paciente();
     $pacientes = $paciente->buscar();
-
+    // var_dump($pacientes);
     $medico = new Medico();
     $medicos = $medico->buscar();
 
@@ -53,19 +57,16 @@ try {
                         </tr>
                     </thead>
                     <tbody>
-                        <?php if (count($citas) > 0) : ?>
-                            <?php foreach ($citas as $key => $cita) : ?>
+                        <?php if (count($cit) > 0) : ?>
+                            <?php foreach ($cit as $key => $cita) : ?>
                                 <?php
-                                    // Verificar si existe el paciente y médico correspondiente
-                                    $paciente = isset($pacientes[$key]) ? $pacientes[$key] : null;
-                                    $medico = isset($medicos[$key]) ? $medicos[$key] : null;
                                 ?>
                                 <tr>
                                     <td><?= $key + 1 ?></td>
-                                    <td><?= $paciente['PACIENTE_NOMBRE'] ?? '' ?></td>
-                                    <td><?= $paciente['PACIENTE_DPI'] ?? '' ?></td>
-                                    <td><?= $paciente['PACIENTE_TELEFONO'] ?? '' ?></td>
-                                    <td><?= $medico['MEDICO_NOMBRE'] ?? '' ?></td>
+                                    <td><?= $cita['PACIENTE_NOMBRE'] ?? '' ?></td>
+                                    <td><?= $cita['PACIENTE_DPI'] ?? '' ?></td>
+                                    <td><?= $cita['PACIENTE_TELEFONO'] ?? '' ?></td>
+                                    <td><?= $cita['MEDICO_NOMBRE'] ?? '' ?></td>
                                     <td><?= $cita['CITA_FECHA'] ?></td>
                                     <td><?= $cita['CITA_HORA'] ?></td>
                                     <td><?= $cita['CITA_REFERENCIA'] ?></td>
