@@ -20,9 +20,8 @@ try {
 
 var_dump($especialidades);
 var_dump($clinicas);
-
-
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -30,7 +29,7 @@ var_dump($clinicas);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <title>Resultados de busqueda</title>
+    <title>Resultados de búsqueda</title>
 </head>
 <body>
     <div class="container">
@@ -39,7 +38,7 @@ var_dump($clinicas);
                 <table class="table table-bordered table-hover">
                     <thead class="table-dark">
                         <tr>
-                            <th>NO. </th>
+                            <th>NO.</th>
                             <th>NOMBRE</th>
                             <th>ESPECIALIDAD</th>
                             <th>CLINICA</th>
@@ -51,21 +50,22 @@ var_dump($clinicas);
                         <?php if(count($medicos) > 0):?>
                         <?php foreach($medicos as $key => $medico) : ?>
                             <?php
-                            // Obtener la especialidad del médico
-                            $especialidad = $especialidades[$key];
-                            // Obtener la clínica del médico
-                            $clinica = $clinicas[$key];?>
-                            <td><?= $key + 1 ?></td>
-                            <td><?= $medico['MEDICO_NOMBRE'] ?></td>
-                            <td><?= $especialidad['ESPEC_NOMBRE'] ?></td>
-                            <td><?= $clinica['CLINICA_NOMBRE'] ?></td>
-                            <td><a class="btn btn-warning w-100" href="/final_franco/vistas/medicos/modificar.php?medico_id=<?= $medico['MEDICO_ID']?>">Modificar</a></td>
-                            <td><a class="btn btn-danger w-100" href="/final_franco/controladores/medicos/eliminar.php?medico_id=<?= $medico['MEDICO_ID']?>">Eliminar</a></td>
-                        </tr>
+                            // Verificar si el índice existe en $especialidades y $clinicas
+                            $especialidad = isset($especialidades[$key]) ? $especialidades[$key] : '';
+                            $clinica = isset($clinicas[$key]) && is_array($clinicas[$key]) ? $clinicas[$key] : array();
+                            ?>
+                            <tr>
+                                <td><?= $key + 1 ?></td>
+                                <td><?= $medico['MEDICO_NOMBRE'] ?></td>
+                                <td><?= $especialidad['ESPEC_NOMBRE'] ?></td>
+                                <td><?= isset($clinica['CLINICA_NOMBRE']) ? $clinica['CLINICA_NOMBRE'] : '' ?></td>
+                                <td><a class="btn btn-warning w-100" href="/final_franco/vistas/medicos/modificar.php?medico_id=<?= $medico['MEDICO_ID']?>">Modificar</a></td>
+                                <td><a class="btn btn-danger w-100" href="/final_franco/controladores/medicos/eliminar.php?medico_id=<?= $medico['MEDICO_ID']?>">Eliminar</a></td>
+                            </tr>
                         <?php endforeach ?>
                         <?php else :?>
                             <tr>
-                                <td colspan="3">NO EXISTEN REGISTROS</td>
+                                <td colspan="6">NO EXISTEN REGISTROS</td>
                             </tr>
                         <?php endif?>
                     </tbody>
@@ -74,9 +74,10 @@ var_dump($clinicas);
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-4">
-                <a href="/final_franco/vistas/medicos/buscar.php" class="btn btn-info w-100">Regresar a la busqueda</a>
+                <a href="/final_franco/vistas/medicos/buscar.php" class="btn btn-info w-100">Regresar a la búsqueda</a>
             </div>
         </div>
     </div>
 </body>
 </html>
+
