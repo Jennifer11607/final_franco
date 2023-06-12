@@ -56,15 +56,16 @@ try {
                         <?php if (count($citas) > 0) : ?>
                             <?php foreach ($citas as $key => $cita) : ?>
                                 <?php
-                                    $paciente = $pacientes[$key];
-                                    $medico = $medicos[$key];
+                                    // Verificar si existe el paciente y médico correspondiente
+                                    $paciente = isset($pacientes[$key]) ? $pacientes[$key] : null;
+                                    $medico = isset($medicos[$key]) ? $medicos[$key] : null;
                                 ?>
                                 <tr>
                                     <td><?= $key + 1 ?></td>
-                                    <td><?= $paciente['PACIENTE_NOMBRE'] ?></td>
-                                    <td><?= $paciente['PACIENTE_DPI'] ?></td>
-                                    <td><?= $paciente['PACIENTE_TELEFONO'] ?></td>
-                                    <td><?= $medico['MEDICO_NOMBRE'] ?></td>
+                                    <td><?= $paciente['PACIENTE_NOMBRE'] ?? '' ?></td>
+                                    <td><?= $paciente['PACIENTE_DPI'] ?? '' ?></td>
+                                    <td><?= $paciente['PACIENTE_TELEFONO'] ?? '' ?></td>
+                                    <td><?= $medico['MEDICO_NOMBRE'] ?? '' ?></td>
                                     <td><?= $cita['CITA_FECHA'] ?></td>
                                     <td><?= $cita['CITA_HORA'] ?></td>
                                     <td><?= $cita['CITA_REFERENCIA'] ?></td>

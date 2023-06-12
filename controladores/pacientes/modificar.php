@@ -8,7 +8,7 @@ require '../../modelos/Paciente.php';
 if($_POST['paciente_nombre'] != '' && $_POST['paciente_dpi'] != '' && $_POST['paciente_telefono'] != ''){
     try {
         $paciente = new Paciente($_POST);
-        $resultado = $paciente->guardar();
+        $resultado = $paciente->modificar();
         $error = "NO se guardó correctamente";
     } catch (PDOException $e) {
         $error = $e->getMessage();

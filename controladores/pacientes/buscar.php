@@ -3,9 +3,15 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 require '../../modelos/Paciente.php';
+
+$resultado = ""; // Variable definida con un valor predeterminado
+
 try {
-    $paciente = new paciente($_GET);
+    $paciente = new Paciente($_GET);
     $pacientes = $paciente->buscar();
+
+    // Aquí se realiza la asignación a la variable $resultado
+    $resultado = "Búsqueda exitosa"; // Por ejemplo, puedes asignar un mensaje de éxito
 
 } catch (PDOException $e) {
     $error = $e->getMessage();

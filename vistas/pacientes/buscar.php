@@ -7,7 +7,7 @@ error_reporting(E_ALL); ?>
     <div class="container">
         <h1 class="text-center">Buscar Pacientes</h1>
         <div class="row justify-content-center">
-            <form action="/franco_alegria/controladores/pacientes/buscar.php" method="GET" class="col-lg-8 border bg-light p-3">
+            <form action="/final_franco/controladores/pacientes/buscar.php" method="GET" class="col-lg-8 border bg-light p-3">
                 <div class="row mb-3">
                     <div class="col">
                         <label for="paciente_nombre">Nombre del paciente</label>
