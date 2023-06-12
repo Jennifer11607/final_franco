@@ -6,8 +6,8 @@
             <form action="/final_franco/controladores/especialidades/guardar.php" method="POST" class="col-lg-8 border bg-light p-3">
                 <div class="row mb-3">
                     <div class="col">
-                    <label for="especialidad_nombre">Especialidad</label>
-                        <input type="text" name="especialidad_nombre" id="especialidad_nombre" class="form-control">
+                    <label for="espec_nombre">Especialidad</label>
+                        <input type="text" name="espec_nombre" id="espec_nombre" class="form-control">
                     </div>
                 </div>
                 <div class="row mb-3">

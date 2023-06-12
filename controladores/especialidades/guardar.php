@@ -1,7 +1,7 @@
 <?php
 require '../../modelos/Especialidad.php';
 
-if($_POST['especialidad_nombre'] != ''){
+if($_POST['espec_nombre'] != ''){
     try {
         $especialidad = new Especialidad($_POST);
         $resultado = $especialidad->guardar();

@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 require_once 'Conexion.php';
 
 class Especialidad extends Conexion{
@@ -14,7 +17,7 @@ class Especialidad extends Conexion{
     }
 
     public function guardar(){
-        $sql = "INSERT INTO especialidades(espec_nombre) values('$this->espec_nombre')";
+        $sql = "INSERT INTO especialidades (espec_nombre) values ('$this->espec_nombre')";
         $resultado = self::ejecutar($sql);
         return $resultado;
     }
