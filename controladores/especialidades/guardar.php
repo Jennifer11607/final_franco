@@ -4,11 +4,13 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 require '../../modelos/Especialidades.php';
 
+$resultado = false; // Inicializar la variable $resultado
+
 if($_POST['espec_nombre'] != ''){
     try {
         $especialidad = new Especialidad($_POST);
         $resultado = $especialidad->guardar();
-        $error = "NO se guardó correctamente";
+        $error = "No se guardó correctamente";
     } catch (PDOException $e) {
         $error = $e->getMessage();
     } catch (Exception $e2){
@@ -41,7 +43,6 @@ if($_POST['espec_nombre'] != ''){
                         Ocurrió un error: <?= $error ?>
                     </div>
                 <?php endif ?>
-              
             </div>
         </div>
         <div class="row">
