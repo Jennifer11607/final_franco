@@ -1,18 +1,19 @@
 <?php
-require '../../modelos/Clinica.php';
+require_once '../../modelos/Clinica.php';
 
-if($_POST['clinica_nombre'] != ''){
+$resultado = false; // Inicializar la variable $resultado
 
+if ($_POST['clinica_nombre'] != '') {
     try {
         $clinica = new Clinica($_POST);
         $resultado = $clinica->guardar();
         $error = "NO se guardó correctamente";
     } catch (PDOException $e) {
         $error = $e->getMessage();
-    } catch (Exception $e2){
+    } catch (Exception $e2) {
         $error = $e2->getMessage();
     }
-}else{
+} else {
     $error = "Debe llenar todos los datos";
 }
 
