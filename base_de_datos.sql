@@ -1,13 +1,15 @@
+create database final_franco;
+
 create table clinicas(
     clinica_id serial primary key not null,
     clinica_nombre varchar(50) not null,
-    clinica_situacion smallint not null default 1,
+    clinica_situacion smallint not null default 1
 );
 
 create table especialidades(
     espec_id serial primary key not null,
     espec_nombre varchar(50) not null,
-    espec_situacion smallint not null default 1,
+    espec_situacion smallint not null default 1
 );
 
 create table pacientes(
@@ -15,7 +17,7 @@ create table pacientes(
     paciente_nombre varchar(50) not null,
     paciente_dpi varchar(15) not null,
     paciente_telefono varchar(15) not null,
-    paciente_situacion smallint not null default 1,
+    paciente_situacion smallint not null default 1
 );
 
 create table medicos(
