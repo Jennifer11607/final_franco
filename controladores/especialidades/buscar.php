@@ -2,7 +2,7 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-require '../../modelos/Especialidad.php';
+require '../../modelos/Especialidades.php';
 try {
     $especialidad = new Especialidad($_GET);
     $especialidades = $especialidad->buscar();
