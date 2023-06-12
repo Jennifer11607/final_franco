@@ -1,7 +1,6 @@
 <?php
 require '../../modelos/Medico.php';
 
-
     try {
         $medico = new Medico($_GET);
         $resultado = $medico->eliminar();
