@@ -9,7 +9,7 @@ require '../../modelos/Cita.php';
    $buscar = new Cita();
 
    $busqueda= $buscar->busqueda();
-var_dump($busqueda);
+
     } catch (PDOException $e) {
         $error = $e->getMessage();
     } 
@@ -32,31 +32,7 @@ var_dump($busqueda);
                         <tr class="text-center table-dark">
                             <td colspan="6"><?= $busqueda[0]['CLINICA_NOMBRE'] ?>(<?= $busqueda[0]['MEDICO_NOMBRE'] ?>)</td>
                         </tr>
-                        <tr>
-                            <th>NO.</th>
-                            <th>PACIENTE</th>
-                            <th>DPI</th>
-                            <th>TELEFONO</th>
-                            <th>HORA DE LA CITA</th>
-                            <th>REFERIDO SI / NO</th>
-                        </tr>
-                        <?php 
-                            foreach($busqueda as $key => $fila) : ?>
-                        <?php if( $fila['CITA_FECHA'] == date('Y-d-m')) { ?>
-                        <tr>
                         
-                            <td><?= $key + 1 ?></td>
-                            <td><?= $fila['PACIENTE_NOMBRE'] ?></td>
-                            <td><?= $fila['PACIENTE_DPI'] ?></td>
-                            <td><?= $fila['PACIENTE_TELEFONO'] ?></td>
-                            <td><?= $fila['CITA_FECHA'] ?></td>
-                            <td><?= $fila['CITA_REFERENCIA'] ?></td>
-                        </tr>
-                        <?php  } ?>
-                        <?php endforeach ?>
-                        <tr class="text-center table-dark">
-                            <td colspan="6"><?= $busqueda[1]['CLINICA_NOMBRE'] ?>(<?= $busqueda[1]['MEDICO_NOMBRE'] ?>)</td>
-                        </tr>
                         <tr>
                             <th>NO.</th>
                             <th>PACIENTE</th>
