@@ -50,8 +50,7 @@ try {
                             // Obtener la especialidad del médico
                             $especialidad = $especialidades[$key];
                             // Obtener la clínica del médico
-                            $clinica = $clinicas[$key];
-                            ?>
+                            $clinica = $clinicas[$key];?>
                             <td><?= $key + 1 ?></td>
                             <td><?= $medico['MEDICO_NOMBRE'] ?></td>
                             <td><?= $especialidad['ESPEC_NOMBRE'] ?></td>
