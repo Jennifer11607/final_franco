@@ -37,7 +37,7 @@ try {
                         <tr>
                             <td><?= $key + 1 ?></td>
                             <td><?= $especialidad['ESPEC_NOMBRE'] ?></td>
-                            <td><a class="btn btn-danger w-100" href="/final_franco/controladores/especialidades/eliminar.php?especialidad_id=<?= $especialidad['ESPECIALIDAD_ID']?>">Eliminar</a></td>
+                            <td><a class="btn btn-danger w-100" href="/final_franco/controladores/especialidades/eliminar.php?espec_id=<?= $especialidad['ESPEC_ID']?>">Eliminar</a></td>
                         </tr>
                         <?php endforeach ?>
                         <?php else :?>
