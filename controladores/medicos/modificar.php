@@ -1,5 +1,7 @@
 <?php
-require '../../modelos/Medico.php';
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);require '../../modelos/Medico.php';
 
 if($_POST['medico_nombre'] != '' && $_POST['medico_espec']  != '' && $_POST['medico_clinica']  != '' && $_POST['medico_id'] != ''){
 

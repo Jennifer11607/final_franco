@@ -1,5 +1,7 @@
 <?php
-require '../../modelos/Especialidad.php';
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);require '../../modelos/Especialidad.php';
     try {
         $especialidad = new Especialidad($_GET);
         $resultado = $especialidad->eliminar();

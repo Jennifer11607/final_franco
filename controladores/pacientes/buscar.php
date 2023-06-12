@@ -4,7 +4,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 require '../../modelos/Paciente.php';
 try {
-    $paciente = new Paciente($_GET);
+    $paciente = new paciente($_GET);
     $pacientes = $paciente->buscar();
 
 } catch (PDOException $e) {
