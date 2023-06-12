@@ -18,9 +18,9 @@ try {
     $error = $e2->getMessage();
 }
 
-var_dump($especialidades);
-var_dump($clinicas);
-?>
+// var_dump($especialidades);
+// var_dump($clinicas);
+// ?>
 
 <!DOCTYPE html>
 <html lang="es">
