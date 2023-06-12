@@ -1,6 +1,9 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 require '../../modelos/Medico.php';
-require_once '../../modelos/Especialidad.php';
+require_once '../../modelos/Especialidades.php';
 require_once '../../modelos/Clinica.php';
 try {
     $medico = new Medico($_GET);
