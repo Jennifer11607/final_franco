@@ -1,6 +1,8 @@
 <?php
 require '../../modelos/Medico.php';
 
+$resultado = false; // Inicializar con valor predeterminado de falso
+
 if($_POST['medico_nombre'] != '' && $_POST['medico_espec'] != '' && $_POST['medico_clinica'] != ''){
     try {
         $medico = new Medico($_POST);
