@@ -17,10 +17,7 @@ try {
 } catch (Exception $e2){
     $error = $e2->getMessage();
 }
-
-// var_dump($especialidades);
-// var_dump($clinicas);
-// ?>
+?>
 
 <!DOCTYPE html>
 <html lang="es">
